@@ -36,12 +36,16 @@ function newYearTree(n) {
 
   // 5
   function primeNumber(n) {
-    for (let i = 2; i <= n; i += 1) {
-      let count = 0;
-      for (let j = 1; j <= i; j += 1) {
-        if (!(i % j)) count += 1;
+    if (!n) {
+      console.log('Input value is invalid');
+    } else {
+      for (let i = 2; i <= n; i += 1) {
+        let count = 0;
+        for (let j = 1; j <= i; j += 1) {
+          if (!(i % j)) count += 1;
+        }
+        if (count == 2) console.log(i);
       }
-      if (count == 2) console.log(i);
     }
   }
 
