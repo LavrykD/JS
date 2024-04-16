@@ -28,12 +28,7 @@ sum([1, 1, 4, 3]); // 9
 
 // 3
 function partialReverse(arr) {
-    let result = [];
-    for (let i in arr) {
-        if (i == 0 || i == arr.length - 1) result.push(arr[i]);
-        else result.push(arr.at(-1 - i));
-    }
-    return result;
+    return [arr[0], ...arr.slice(1, -1).reverse(), arr.at(-1)];
 }
 
 partialReverse([1, 2, 3, 4, 5, 6]); // [1, 5, 4, 3, 2, 6]
@@ -74,10 +69,11 @@ noDuplicates([1, 5, 2, 3, 4, 5]); // false
 
 // 7
 function removeNegative(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] < 0) arr.splice(i, 1);
-    }
-    return arr;
+    let result = [];
+    arr.forEach(x => {
+        if (x >= 0) result.push(x);
+    });
+    return result;
 }
 
 removeNegative([-2,4,3,-10,0,3, -22, 4, 2, -2]); // [4, 3, 0, 3, 4, 2]
