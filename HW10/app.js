@@ -92,8 +92,8 @@ function makeTree(h) {
     for (let i = 0; i < h; i += 1) {
         result.push(' '.repeat(h - i - 1) + '*'.repeat(2 * i + 1));
     }
-    return {tree: result, showTree: () => result.forEach(x => console.log(x))};
-}
+    return {tree: result, showTree: function() { result.forEach(x => console.log(x)) }};
+};
 
 console.log(makeTree(3).tree);
 console.log(makeTree(5).showTree());
