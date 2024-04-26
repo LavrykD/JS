@@ -47,17 +47,18 @@ console.log(groupByCity(people)); // {'Kyiv': ['Oleksii', 'Nastia'], 'Lviv': ['S
 //4
 let obj = { banana: 1, orange: 2, meat: 4 };
 const doublePrices = (obj) => {
-    for (let k in obj) {
-        obj[k] *= 2;
+    let result = {...obj};
+    for (let k in result) {
+        result[k] *= 2;
     }
-    return obj;
+    return result;
 };
 
 console.log(doublePrices(obj));
 
 //5
 let salary = { "Іван": 100, "Петро": 300, "Марія": 250 };
-const getTopSalary = (obj) => Object.entries(salary).reduce((a, c) => a[1] < c[1] ? c : a)[0];
+const getTopSalary = (obj) => Object.keys(obj).find(k => obj[k] === Math.max(...Object.values(obj)));
 
 console.log(getTopSalary(salary)); // Петро
 
