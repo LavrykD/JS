@@ -1,6 +1,6 @@
 // 1
 const animal = {
-    brain: 1,
+    brainCount: 1,
     happySound() {
         console.log("*sound of happinnes*");
     }
