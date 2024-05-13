@@ -70,7 +70,40 @@ user.fullName = "Andy Groomly";
 console.log(user.fullName);
 
 // 3
-function checkDogBreed(dogObject, Breed) {
-    
+class Dogs {
+    constructor(breed) {
+        this.breed = breed;
+        this.offspring = [];
+    }
+
+    offSpring(dog) {
+        this.offspring.push(dog);
+    }
 }
+
+function checkDogBreed(dogObject, Breed) {
+    if (dogObject.breed === Breed) return true;
+
+    for (let breed of dogObject.offspring) {
+        if (checkDogBreed(breed, Breed)) return true;
+    }
+
+    return false;
+}
+
+let maltipu = new Dogs("Maltipu");
+let maltese_bologna = new Dogs("Maltese bologna");
+let poodle = new Dogs("Poodle");
+let otherDog = new Dogs("Other Dog");
+
+maltipu.offSpring(maltese_bologna);
+maltipu.offSpring(poodle);
+poodle.offSpring(otherDog);
+
+console.log(maltipu.offspring);
+console.log(poodle.offspring);
+console.log(checkDogBreed(maltipu, "Maltese bologna"));
+console.log(checkDogBreed(maltipu, "Poodle"));
+console.log(checkDogBreed(maltipu, "Other Dog"));
+
 
