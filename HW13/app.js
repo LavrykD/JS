@@ -49,9 +49,9 @@ getTodos([1, 2, 201]);
 
 // 5
 async function delay(s) {
-    while (s > 0) {
+    if (s > 0) {
         await new Promise(resolve => setTimeout(() => resolve(s), 1000)).then(res => console.log(res));
-        s -= 1;
+        await delay(s - 1);
     }
 }
 
