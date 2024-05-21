@@ -49,7 +49,8 @@ getTodos([1, 2, 201]);
 
 // 5
 async function delay(s) {
-    await new Promise(resolve => setTimeout(() => {resolve(s)}, s * 1000)).then(res => console.log(`${s} ${s > 2 ? "seconds" : "second"} pause is over`));
+    await new Promise(resolve => setTimeout(() => { resolve(s) }, s * 1000))
+        .then(res => console.log(`${s} ${s > 2 ? "seconds" : "second"} pause is over`));
 }
 
 delay(10);
