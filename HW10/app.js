@@ -6,7 +6,7 @@ let oksana = { name: "Оксана", age: 12 };
 let array = [ petro, ivan, mariya, oksana ];
 
 function sortByAge(arr) {
-    return array.toSorted((a, b) => a.age - b.age);
+    return arr.toSorted((a, b) => a.age - b.age);
 }
 
 console.log(sortByAge(array));

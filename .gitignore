@@ -1,3 +1,4 @@
 # Ignoring environment variables
 HW17/.env
 HW17/cypress/e2e/*/
+HW18/.env
